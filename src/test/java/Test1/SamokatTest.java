@@ -1,6 +1,6 @@
 package Test1;
 
-import PomForTest1.SamokatPage;
+import pomhomepageyandexsamokat.HomePageYandexSamokat;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -10,21 +10,21 @@ import org.testng.annotations.Test;
 
 public class SamokatTest {
     private WebDriver driver;
-    private SamokatPage samokatPage;
+    private HomePageYandexSamokat homePageYandexSamokat;
 
     @BeforeTest
     public void setup() {
         System.setProperty("webdriver.chrome.driver", "C:/Users/user/Desktop/WebDriver/bin/chromedriver.exe");
         driver = new ChromeDriver();
-        samokatPage = new SamokatPage(driver);
-        samokatPage.open();
+        homePageYandexSamokat = new HomePageYandexSamokat(driver);
+        homePageYandexSamokat.open();
     }
 
     @Test(priority = 1)
     public void testDropdown() {
-        samokatPage.acceptCookies();
-        samokatPage.openDropdown();
-        Assert.assertTrue(samokatPage.isDropdownTextDisplayed(), "—утки Ч 400 рублей. ќплата курьеру Ч наличными или картой.");
+        homePageYandexSamokat.acceptCookies();
+        homePageYandexSamokat.openDropdown();
+        Assert.assertTrue(homePageYandexSamokat.isDropdownTextDisplayed(), "—утки Ч 400 рублей. ќплата курьеру Ч наличными или картой.");
     }
 
     @AfterTest

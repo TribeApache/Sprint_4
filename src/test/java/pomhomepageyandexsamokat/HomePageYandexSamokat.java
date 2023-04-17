@@ -1,4 +1,4 @@
-package PomForTest1;
+package pomhomepageyandexsamokat;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
-public class SamokatPage {
+public class HomePageYandexSamokat {
     private WebDriver driver;
     private WebDriverWait wait;
 
@@ -19,15 +19,17 @@ public class SamokatPage {
     private By dropdownArrowLocator = By.xpath("//div[@id='accordion__heading-0' and @class='accordion__button'][text()='—колько это стоит? » как оплатить?']");
     private By dropdownTextLocator = By.xpath("//div[@id='accordion__panel-0' and @class='accordion__panel'][p/text()='—утки Ч 400 рублей. ќплата курьеру Ч наличными или картой.']");
 
-    public SamokatPage(WebDriver driver) {
+    public HomePageYandexSamokat(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, 10);
     }
 
+    public static final String BASE_URL = "https://qa-scooter.praktikum-services.ru/";
+
     public void open() {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("https://qa-scooter.praktikum-services.ru/");
+        driver.get(BASE_URL);
     }
 
     public void acceptCookies() {
