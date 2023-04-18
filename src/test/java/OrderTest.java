@@ -1,5 +1,5 @@
-import PoForTest.PageObjectModelHomePage;
-import PoForTest.PageObjectModelOrderSamokat;
+import ru.yandex.PageObjectModelHomePage;
+import ru.yandex.PageObjectModelOrderSamokat;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Assert;
@@ -10,10 +10,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import static PoForTest.PageObjectModelHomePage.orderButtonDown;
-import static PoForTest.PageObjectModelHomePage.orderButtonUp;
-import static PoForTest.PageObjectModelOrderSamokat.selectBlack;
-import static PoForTest.PageObjectModelOrderSamokat.selectGrey;
+import static ru.yandex.PageObjectModelHomePage.*;
+import static ru.yandex.PageObjectModelOrderSamokat.*;
 
 @RunWith(Parameterized.class)
 public class OrderTest {
@@ -46,12 +44,12 @@ public class OrderTest {
     @Parameterized.Parameters
     public static Object[][] getData() {
         return new Object[][]{
-                {orderButtonUp,
+                {ORDER_BUTTON_UP,
                         "Иванов", "Иван", "Полевая 68, кв 10", "Коломенская", "+79175256365",
-                        "17.04.2023", "сутки", selectBlack, "Можно без звонка"},
-                {orderButtonDown,
+                        "17.04.2023", "сутки", SELECT_BLACK, "Можно без звонка"},
+                {ORDER_BUTTON_DOWN,
                         "Пупкин", "Сергей", "Коломенская 10 кв 27", "Братиславская", "89653256414",
-                        "25.04.2023", "двое суток", selectGrey, "Звоните"},
+                        "25.04.2023", "двое суток", SELECT_GRAY, "Звоните"},
         };
     }
 
